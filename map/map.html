@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_6eb5983c2a7de1a1fac3a96fae1d1c38 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+    <title>BLE sensors map</title>
+    <meta http-equiv="refresh" content="10" />
+    
+    
+    <div style="position: fixed; 
+    bottom: 30px; left: 30px; width: 125px; height: 95px; 
+    border:2px solid grey; background-color: white; z-index:9999; font-size:14px;
+    ">&nbsp; Color Legend <br>
+    &nbsp; High (100):&nbsp; <i class="fa fa-circle fa-1x" style="color:red"></i><br>
+    &nbsp; Med (  50):&nbsp; <i class="fa fa-circle fa-1x" style="color:#800080"></i><br>
+    &nbsp; Low (   0):&nbsp; <i class="fa fa-circle fa-1x" style="color:blue"></i>
+    </div>
+    
+    
+    <div style="position: fixed; 
+    top: 30px; right: 30px; width: 160px; height: 25px; 
+    border:2px solid grey; background-color: white; z-index:9999; font-size:14px;
+    ">&nbsp; 2024-05-10 20:20:28 <br>
+    </div>
+    
+    
+            <div class="folium-map" id="map_6eb5983c2a7de1a1fac3a96fae1d1c38" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_6eb5983c2a7de1a1fac3a96fae1d1c38 = L.map(
+                "map_6eb5983c2a7de1a1fac3a96fae1d1c38",
+                {
+                    center: [35.70422772310268, 139.75254435655182],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 18,
+                    zoomControl: false,
+                    preferCanvas: false,
+                    scrollWheelZoom: false,
+                    dragging: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_2e7e571efe5452d2bbfa65402a2ab06f = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 20, "maxZoom": 20, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abcd", "tms": false}
+            );
+        
+    
+            tile_layer_2e7e571efe5452d2bbfa65402a2ab06f.addTo(map_6eb5983c2a7de1a1fac3a96fae1d1c38);
+        
+    
+            var circle_marker_3438f1d64fbea84e58bb19d71d0f00ec = L.circleMarker(
+                [35.70474895371453, 139.75300773919747],
+                {"bubblingMouseEvents": true, "color": "#92b4fe", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#92b4fe", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 25, "stroke": true, "weight": 3}
+            ).addTo(map_6eb5983c2a7de1a1fac3a96fae1d1c38);
+        
+    
+            circle_marker_3438f1d64fbea84e58bb19d71d0f00ec.bindTooltip(
+                `<div>
+                     45
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_7403265236bb346130b647c3a6b68bb1 = L.circleMarker(
+                [35.7045442169383, 139.75265905203636],
+                {"bubblingMouseEvents": true, "color": "#5b7ae5", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#5b7ae5", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 25, "stroke": true, "weight": 3}
+            ).addTo(map_6eb5983c2a7de1a1fac3a96fae1d1c38);
+        
+    
+            circle_marker_7403265236bb346130b647c3a6b68bb1.bindTooltip(
+                `<div>
+                     46
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_b175772f49e949ea1089d780d7a9f16b = L.circleMarker(
+                [35.70452717925745, 139.75248517471599],
+                {"bubblingMouseEvents": true, "color": "#6a8bef", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6a8bef", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 25, "stroke": true, "weight": 3}
+            ).addTo(map_6eb5983c2a7de1a1fac3a96fae1d1c38);
+        
+    
+            circle_marker_b175772f49e949ea1089d780d7a9f16b.bindTooltip(
+                `<div>
+                     47
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_25dc9bd7b2eb784474380be30390d05c = L.circleMarker(
+                [35.70413403953452, 139.75240873176796],
+                {"bubblingMouseEvents": true, "color": "#6687ed", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6687ed", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 25, "stroke": true, "weight": 3}
+            ).addTo(map_6eb5983c2a7de1a1fac3a96fae1d1c38);
+        
+    
+            circle_marker_25dc9bd7b2eb784474380be30390d05c.bindTooltip(
+                `<div>
+                     48
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_7a463e4311bbbd82831687b5bcf5be91 = L.circleMarker(
+                [35.70318422606862, 139.7521610850414],
+                {"bubblingMouseEvents": true, "color": "#81a4fb", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#81a4fb", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 25, "stroke": true, "weight": 3}
+            ).addTo(map_6eb5983c2a7de1a1fac3a96fae1d1c38);
+        
+    
+            circle_marker_7a463e4311bbbd82831687b5bcf5be91.bindTooltip(
+                `<div>
+                     50
+                 </div>`,
+                {"sticky": true}
+            );
+        
+</script>
+</html>
